@@ -4,25 +4,66 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --foreground-dim-rgb: 51, 51, 51;
+  --background-start-rgb: 245, 245, 245;
   --background-end-rgb: 255, 255, 255;
+  /* lock on colours */
+  --colour-primary: #005807;
+  --colour-white: #fff;
+  --colour-gray: #DBDBDB;
+  --colour-black: #000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+    --foreground-dim-rgb: 204, 204, 204;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
+  color: rgb(var(--foreground-dim-rgb));
+  font-family: var(--font-montserrat);
+}
+
+h1, h2, h3 {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-end-rgb));
+  font-family: var(--font-noto-serif);
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .colour-bg {
+    position: relative;
+  }
+  .colour-bg:before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    margin-left: -50VW;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
   }
 }

@@ -2,7 +2,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
 
 const Grid = ({ blok }): JSX.Element => {
   return (
-    <div className="grid grid-cols-3" {...storyblokEditable(blok)}>
+    <div className="grid md:grid-cols-3" {...storyblokEditable(blok)}>
       {blok.columns.map((nestedBlok) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}

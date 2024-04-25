@@ -1,0 +1,12 @@
+.body:before {
+  background: var(--background-start-rgb);
+}
+
+.copyright {
+  color: var(--colour-white);
+}
+.copyright:before {
+  background: var(--colour-primary);
+  padding: 1rem 0;
+  color: var(--colour-white);
+}

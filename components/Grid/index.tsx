@@ -1,6 +1,18 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
 
-const Grid = ({ blok }): JSX.Element => {
+import { SbBlokInjected } from '@/types';
+
+interface IGridBlok {
+  _uid: string;
+  component: 'grid';
+  columns: Array<any>; // TODO: type any
+}
+
+interface IGridProps extends SbBlokInjected<IGridBlok> {
+
+}
+
+const Grid = ({ blok }: IGridProps): JSX.Element => {
   return (
     <div className="grid md:grid-cols-3" {...storyblokEditable(blok)}>
       {blok.columns.map((nestedBlok) => (

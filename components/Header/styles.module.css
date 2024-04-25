@@ -1,0 +1,20 @@
+.header {
+  background: var(--colour-white);
+  padding: 1rem 0;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .175);
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.logo img {
+  max-width: 120px;
+  max-height: 32px;
+}
+@media screen and (min-width: 768px) {
+  .logo img {
+    max-width: none;
+    max-height: 50px;
+  }
+}

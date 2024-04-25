@@ -1,4 +1,5 @@
 import {
+  ISbResult,
   getStoryblokApi,
 } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
@@ -14,7 +15,7 @@ export default async function SubPages(props: PageProps) {
   );
 }
 
-export async function fetchData(slug: string) {
+async function fetchData(slug: string): Promise<ISbResult> {
   const storyblokApi = getStoryblokApi();
   return await storyblokApi.get(`cdn/stories/${slug}`, { version: 'draft' }, { cache: 'no-store' });
 }
